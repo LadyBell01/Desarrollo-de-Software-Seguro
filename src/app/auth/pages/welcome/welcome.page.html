@@ -1,0 +1,32 @@
+<ion-content [fullscreen]="true" class="welcome-content">
+  <div class="welcome-container">
+
+    <!-- Illustration area -->
+    <div class="illustration-section">
+      <div class="utensils-icon">
+        <ion-icon name="restaurant-outline"></ion-icon>
+        <ion-icon name="create-outline" class="pencil"></ion-icon>
+      </div>
+    </div>
+
+    <!-- Main title -->
+    <div class="title-section">
+      <h1 class="script-title">¡A COMER!</h1>
+    </div>
+
+    <!-- Chef illustration placeholder -->
+    <div class="chef-section">
+      <ion-icon name="person-outline" class="chef-icon"></ion-icon>
+      <p class="chef-text">Chef</p>
+    </div>
+
+    <!-- Skip button -->
+    <div class="skip-section">
+      <ion-button fill="clear" (click)="skipToLogin()">
+        Saltar
+        <ion-icon name="arrow-forward" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+
+  </div>
+</ion-content>

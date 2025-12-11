@@ -1,0 +1,286 @@
+.home-content {
+  --background: #121212;
+}
+
+.header-section {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  background: #1e1e1e;
+  padding-bottom: 1.5rem;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+
+  .user-greeting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    .text {
+      .greeting {
+        font-size: 1.1rem;
+        color: #b0bec5;
+        margin: 0;
+
+        span {
+          color: var(--ion-color-primary);
+          font-weight: 600;
+        }
+      }
+
+      .question {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0.4rem 0 0 0;
+        line-height: 1.2;
+      }
+    }
+
+    .avatar {
+      cursor: pointer;
+    }
+  }
+
+  .search-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    .custom-searchbar {
+      --background: #2c2c2c;
+      --color: #ffffff;
+      --placeholder-color: #9e9e9e;
+      --icon-color: #9e9e9e;
+      --border-radius: 16px;
+      --box-shadow: none;
+      padding: 0;
+      flex: 1;
+    }
+
+    .filter-btn {
+      --background: var(--ion-color-primary);
+      --color: #000000;
+      --border-radius: 16px;
+      width: 50px;
+      height: 50px;
+      margin: 0;
+      --box-shadow: 0 4px 12px rgba(255, 112, 67, 0.3);
+
+      ion-icon {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+.loading-section {
+  padding: 1.5rem;
+
+  .skeleton-horizontal {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+
+    .skeleton-card {
+      min-width: 140px;
+      margin: 0;
+    }
+  }
+}
+
+.popular-section {
+  padding: 1.5rem 0;
+
+  .section-header {
+    padding: 0 1.5rem;
+    margin-bottom: 1rem;
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+    }
+  }
+
+  .horizontal-scroll {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 0 1.5rem 1rem 1.5rem;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .recipe-card-small {
+      min-width: 140px;
+      max-width: 140px;
+      cursor: pointer;
+
+      .image-container {
+        position: relative;
+        height: 140px;
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 0.5rem;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .category-badge {
+          position: absolute;
+          bottom: 8px;
+          left: 8px;
+          background: rgba(255, 112, 67, 0.9);
+          color: #000;
+          padding: 4px 8px;
+          border-radius: 8px;
+          font-size: 0.7rem;
+          font-weight: 600;
+        }
+      }
+
+      .card-content {
+        h3 {
+          font-size: 0.9rem;
+          font-weight: 600;
+          color: #ffffff;
+          margin: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
+
+.recipes-section {
+  padding: 1.5rem;
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+    }
+
+    .count {
+      color: #b0bec5;
+      font-size: 0.9rem;
+    }
+  }
+
+  .recipe-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .recipe-card {
+      background: #1e1e1e;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.2s;
+
+      &:active {
+        transform: scale(0.98);
+      }
+
+      .image-container {
+        position: relative;
+        height: 200px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .rating-badge {
+          position: absolute;
+          top: 12px;
+          left: 12px;
+          background: rgba(30, 30, 30, 0.8);
+          backdrop-filter: blur(8px);
+          padding: 6px 10px;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          gap: 6px;
+          font-size: 0.9rem;
+          font-weight: 600;
+          color: #ffffff;
+
+          ion-icon {
+            color: var(--ion-color-warning);
+            font-size: 1rem;
+          }
+        }
+
+        .fav-btn {
+          position: absolute;
+          top: 12px;
+          right: 12px;
+          background: rgba(255, 255, 255, 0.9);
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #ff4961;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+      }
+
+      .card-content {
+        padding: 1.2rem;
+
+        h3 {
+          margin: 0 0 0.5rem 0;
+          font-size: 1.2rem;
+          font-weight: 700;
+          color: #ffffff;
+        }
+
+        .category {
+          margin: 0;
+          font-size: 0.9rem;
+          color: #b0bec5;
+        }
+      }
+    }
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 3rem 1.5rem;
+
+    ion-icon {
+      font-size: 4rem;
+      color: #b0bec5;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #b0bec5;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}

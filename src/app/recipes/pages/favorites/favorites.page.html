@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Favoritos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="favorites-content">
+
+  <div class="header-section">
+    <h1>Mis Favoritos</h1>
+    <p class="subtitle">{{ favoriteRecipes.length }} recetas guardadas</p>
+
+    <ion-searchbar placeholder="Busca en favoritos..." class="custom-searchbar" (ionInput)="onSearch($event)"
+      [debounce]="300">
+    </ion-searchbar>
+  </div>
+
+  <!-- Loading skeleton -->
+  <div *ngIf="loading" class="loading-section">
+    <div class="skeleton-card" *ngFor="let i of [1,2,3]">
+      <ion-skeleton-text animated style="width: 100%; height: 200px;"></ion-skeleton-text>
+    </div>
+  </div>
+
+  <!-- Favorites list -->
+  <div *ngIf="!loading && filteredRecipes.length > 0" class="favorites-list">
+    <div class="recipe-card" *ngFor="let recipe of filteredRecipes" (click)="openRecipe(recipe.idMeal)">
+      <div class="image-container">
+        <img [src]="recipe.strMealThumb" [alt]="recipe.strMeal" loading="lazy">
+        <div class="rating-badge">
+          <ion-icon name="star"></ion-icon>
+          <span>4.5</span>
+        </div>
+        <div class="remove-btn" (click)="removeFavorite(recipe.idMeal, $event)">
+          <ion-icon name="heart"></ion-icon>
+        </div>
+      </div>
+      <div class="card-content">
+        <h3>{{ recipe.strMeal }}</h3>
+        <p class="category">{{ recipe.strCategory }} • {{ recipe.strArea }}</p>
+        <div class="meta-info">
+          <div class="time">
+            <ion-icon name="time-outline"></ion-icon>
+            <span>30 min</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Empty state -->
+  <div *ngIf="!loading && favoriteRecipes.length === 0" class="empty-state">
+    <ion-icon name="heart-outline"></ion-icon>
+    <h2>No tienes favoritos</h2>
+    <p>Explora recetas y guarda tus favoritas aquí</p>
+    <ion-button routerLink="/recipes/tabs/home" expand="block">
+      Explorar Recetas
+    </ion-button>
+  </div>
+
+  <!-- No results -->
+  <div *ngIf="!loading && favoriteRecipes.length > 0 && filteredRecipes.length === 0" class="empty-state">
+    <ion-icon name="search-outline"></ion-icon>
+    <h2>Sin resultados</h2>
+    <p>No se encontraron recetas con "{{ searchQuery }}"</p>
+  </div>
+
+</ion-content>

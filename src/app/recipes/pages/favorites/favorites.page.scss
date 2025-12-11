@@ -1,0 +1,186 @@
+.favorites-content {
+    --background: #121212;
+}
+
+.header-section {
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    background: #1e1e1e;
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    margin-bottom: 1.5rem;
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #ffffff;
+        margin: 0 0 0.5rem 0;
+    }
+
+    .subtitle {
+        color: #b0bec5;
+        font-size: 1rem;
+        margin: 0 0 1.5rem 0;
+    }
+
+    .custom-searchbar {
+        --background: #2c2c2c;
+        --color: #ffffff;
+        --placeholder-color: #9e9e9e;
+        --icon-color: #9e9e9e;
+        --border-radius: 16px;
+        --box-shadow: none;
+        padding: 0;
+    }
+}
+
+.loading-section {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .skeleton-card {
+        border-radius: 24px;
+        overflow: hidden;
+    }
+}
+
+.favorites-list {
+    padding: 0 1.5rem 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .recipe-card {
+        background: #1e1e1e;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: transform 0.2s;
+
+        &:active {
+            transform: scale(0.98);
+        }
+
+        .image-container {
+            position: relative;
+            height: 200px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .rating-badge {
+                position: absolute;
+                top: 12px;
+                left: 12px;
+                background: rgba(30, 30, 30, 0.8);
+                backdrop-filter: blur(8px);
+                padding: 6px 10px;
+                border-radius: 12px;
+                display: flex;
+                align-items: center;
+                gap: 6px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                color: #ffffff;
+
+                ion-icon {
+                    color: var(--ion-color-warning);
+                    font-size: 1rem;
+                }
+            }
+
+            .remove-btn {
+                position: absolute;
+                top: 12px;
+                right: 12px;
+                background: rgba(255, 73, 97, 0.9);
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #ffffff;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+                z-index: 10;
+
+                &:active {
+                    transform: scale(0.9);
+                }
+            }
+        }
+
+        .card-content {
+            padding: 1.2rem;
+
+            h3 {
+                margin: 0 0 0.5rem 0;
+                font-size: 1.2rem;
+                font-weight: 700;
+                color: #ffffff;
+            }
+
+            .category {
+                margin: 0 0 0.8rem 0;
+                font-size: 0.9rem;
+                color: #b0bec5;
+            }
+
+            .meta-info {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+
+                .time {
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
+                    font-size: 0.9rem;
+                    color: #b0bec5;
+
+                    ion-icon {
+                        font-size: 1rem;
+                        color: var(--ion-color-primary);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.empty-state {
+    text-align: center;
+    padding: 4rem 2rem;
+
+    ion-icon {
+        font-size: 5rem;
+        color: #b0bec5;
+        margin-bottom: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0 0 0.5rem 0;
+    }
+
+    p {
+        color: #b0bec5;
+        font-size: 1rem;
+        margin: 0 0 2rem 0;
+    }
+
+    ion-button {
+        --background: var(--ion-color-primary);
+        --border-radius: 28px;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
